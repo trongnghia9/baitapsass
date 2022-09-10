@@ -1,0 +1,125 @@
+.contactForm {
+    // height: 800px;
+    // padding: 60px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contactBG-bottom {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .contactForm__content {
+        width: 72vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 -20px;
+    }
+    @media screen and (max-width: $lg) {
+        .contactForm__content {
+            width: 100vw;
+        }
+    }
+    @media screen and (max-width: $md) {
+        .contactForm__content {
+            display: block;
+        }
+    }
+    
+    .contactForm__row {
+        position: relative;
+    }
+    .contactForm__left {
+        width: 100%;
+        text-align: center;
+        justify-self: center;
+        .contact__image {
+            margin-top: 4em;
+            margin-bottom: 2em;
+            padding: 0 20px;
+            width: 566px;
+            height: 526px;
+        }
+    }
+    
+    .contactForm__right {
+        max-width: 40%;
+        margin-right: 15px;
+        justify-content: center;
+        padding: 40px 25px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+
+        form {
+            width: 100%;
+        }
+
+        h3 {
+            @include text($color-primary-0, $fs-8, $fw-4);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
+    @media screen and (max-width: $md) {
+        .contactForm__right {
+            margin-top: 20px;
+            padding: 0 50px;
+            max-width: 100%;
+        }
+    }
+    .contactForm__name {
+        padding-right: 1em;
+    }
+    .form-group {
+        padding-bottom: 0.5em;
+        i {
+            position: absolute;
+            color: #b61984;
+            margin-top: 15px;
+            margin-left: 11px;
+            line-height: 16px;
+            font-size: 20px;
+        }
+        input {
+            @include text(rgb(24, 24, 24), $fs-2, $fw-1);
+            height: 3.7em;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            padding: 1em 1em 1em 2.75em;
+        }
+        .custom-select {
+            @extend input;
+        }
+        textarea {
+            @extend input;
+            border-radius: 20px !important;
+            height: 90px;
+        }
+    }
+    .contactForm__btn {
+        max-width: 150px;
+        padding: 2em 0;
+
+        .myBTN {
+            width: 100%;
+            letter-spacing: 1px;
+            margin: 8px;
+            line-height: 1;
+            @include button($color-primary-1, 50px, $color-primary-1, 1.5em, 1.5em);
+            @include text($color-primary-2, $fs-2, $fw-3);
+
+            &:hover {
+                color: #b61984;
+                box-shadow: 0 0 0 1px #b61984 inset;
+                border: 1px solid $color-primary-1;
+            }
+        }
+    }
+}

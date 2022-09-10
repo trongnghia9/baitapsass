@@ -1,0 +1,77 @@
+.myContact {
+    position: relative;
+    background-color: #dcd1f0;
+    z-index: 1;
+    .myContactBG {
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+    
+}
+.myTeam {
+    .myTeam_item {
+        padding: 0 1.35rem 1.35rem 1.35rem;
+        margin-top: 2.35rem;
+    }
+    @media screen and (max-width: $md) {
+        .myTeam_item {
+            padding: 14px 10px;
+            margin: 0;
+        }
+    }
+    
+    .card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease-out;
+
+        &:hover {
+            transform: translateY(-5px) scale(1.005) translateZ(0);
+            box-shadow: 0 20px 28px rgba(0, 0, 0, 0.11), 0 20px 28px rgba(146, 146, 145, 0.48);
+        }
+        &:active {
+            transform: scale(1) translateZ(0);
+            box-shadow: 0 15px 24px rgba(0, 0, 0, 0.11), 0 15px 24px rgba(146, 146, 145, 0.48);
+        }
+    }
+    .card-title {
+        @include text($color-primary-1, $fs-9, $fw-3);
+        margin-bottom: 0.7rem;
+        text-align: center;
+    }
+    .card--name {
+        @include text($color-primary-0, $fs-7, $fw-4);
+        line-height: 1.2;
+        text-align: center;
+    }
+    .card-text {
+        @include text($color-primary-0, $fs-1, $fw-1);
+        line-height: 1.8em;
+        text-align: center;
+        margin: 0 0 1em;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+    }
+    img {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+        transition: opacity 0.5s, -webkit-transform 0.5s;
+        transition: opacity 0.5s, transform 0.5s;
+        transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+
+        &:hover {
+            -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+        }
+    }
+    
+}
+@media screen and (max-width: $md) {
+    .container {
+        max-width: 90%;
+    }
+}
